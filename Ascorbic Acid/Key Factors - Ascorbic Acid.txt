@@ -1,0 +1,8 @@
+ASCORBIC ACID (B3LYP/6-31G*)
+E(HOMO)  = -6.1194 eV
+E(LUMO)  = -0.7450 eV
+Gap      =  5.3744 eV
+IP       =  6.1194 eV
+EA       =  0.7450 eV
+Hardness =  2.6872 eV
+Softness =  0.1861 eV-1

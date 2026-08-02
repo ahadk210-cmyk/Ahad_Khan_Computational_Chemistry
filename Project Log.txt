@@ -1,0 +1,44 @@
+Project 1 - DFT Analysis of Food Antioxidants
+B3LYP/6-31G* level of theory
+
+QUERCETIN (C15H10O7, 32 atoms)
+E(HOMO)  = -5.5803 eV
+E(LUMO)  = -1.6115 eV
+Gap      =  3.9688 eV
+IP       =  5.5803 eV
+EA       =  1.6115 eV
+Hardness =  1.9844 eV
+Softness =  0.2520 eV-1
+Note: persistent imaginary frequency -185.39 cm-1 (torsional OH mode)
+
+CATECHIN (C15H14O6, 35 atoms)
+E(HOMO)  = -5.3061 eV
+E(LUMO)  =  0.3440 eV
+Gap      =  5.6501 eV
+IP       =  5.3061 eV
+EA       = -0.3440 eV
+Hardness =  2.8251 eV
+Softness =  0.1770 eV-1
+No imaginary frequencies ✅
+
+ASCORBIC ACID (C6H8O6, 20 atoms)
+E(HOMO)  = -6.1194 eV
+E(LUMO)  = -0.7450 eV
+Gap      =  5.3744 eV
+IP       =  6.1194 eV
+EA       =  0.7450 eV
+Hardness =  2.6872 eV
+Softness =  0.1861 eV-1
+No imaginary frequencies ✅
+
+CAFFEIC ACID (C9H8O4, 21 atoms)
+E(HOMO)  = -5.7234 eV
+E(LUMO)  = -1.5307 eV
+Gap      =  4.1927 eV
+IP       =  5.7234 eV
+EA       =  1.5307 eV
+Hardness =  2.0964 eV
+Softness =  0.2385 eV-1
+No imaginary frequencies ✅
+
+RUTIN — pending

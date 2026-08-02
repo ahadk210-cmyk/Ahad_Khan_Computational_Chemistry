@@ -1,0 +1,8 @@
+CATECHIN (B3LYP/6-31G*)
+E(HOMO)  = -5.3061 eV
+E(LUMO)  =  0.3440 eV
+Gap      =  5.6501 eV
+IP       =  5.3061 eV
+EA       = -0.3440 eV
+Hardness =  2.8251 eV
+Softness =  0.1770 eV-1

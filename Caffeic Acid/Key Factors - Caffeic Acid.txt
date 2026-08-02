@@ -1,0 +1,9 @@
+CAFFEIC ACID (C9H8O4, 21 atoms)
+E(HOMO)  = -5.7234 eV
+E(LUMO)  = -1.5307 eV
+Gap      =  4.1927 eV
+IP       =  5.7234 eV
+EA       =  1.5307 eV
+Hardness =  2.0964 eV
+Softness =  0.2385 eV-1
+No imaginary frequencies ✅
