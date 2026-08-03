@@ -10,11 +10,11 @@
 
 ## Project Overview
 
-This project presents a density functional theory (DFT) based computational investigation of the electronic structure and antioxidant activity of four naturally occurring food polyphenols. The central question addressed is:
+This project presents a density functional theory (DFT) based computational investigation of the electronic structure and antioxidant activity of five naturally occurring food polyphenols. The central question addressed is:
 
 > *"Why are some food antioxidants stronger than others — and can quantum chemistry explain this computationally?"*
 
-Using the B3LYP/6-31G* level of theory implemented in ORCA 6.1.1, geometry optimisations and frequency calculations were performed on four molecules. HOMO-LUMO gaps, conceptual DFT descriptors, and electrostatic potential maps were calculated and correlated with experimental DPPH radical scavenging activity (IC₅₀) from published literature.
+Using the B3LYP/6-31G* level of theory implemented in ORCA 6.1.1, geometry optimisations and frequency calculations were performed on five molecules. HOMO-LUMO gaps, conceptual DFT descriptors, and electrostatic potential maps were calculated and correlated with experimental DPPH radical scavenging activity (IC₅₀) from published literature.
 
 ---
 
@@ -23,6 +23,7 @@ Using the B3LYP/6-31G* level of theory implemented in ORCA 6.1.1, geometry optim
 | Molecule | Formula | MW (Da) | Atoms | Food Source |
 |----------|---------|---------|-------|-------------|
 | Quercetin | C₁₅H₁₀O₇ | 302.24 | 32 | Onions, apples, berries |
+| Rutin | C₂₇H₃₀O₁₆ | 594.52 | 73 | Buckwheat, citrus |
 | Caffeic Acid | C₉H₈O₄ | 180.16 | 21 | Coffee, olive oil |
 | Ascorbic Acid | C₆H₈O₆ | 176.12 | 20 | Citrus fruits |
 | Catechin | C₁₅H₁₄O₆ | 290.27 | 35 | Green tea, cocoa |
@@ -36,6 +37,7 @@ Using the B3LYP/6-31G* level of theory implemented in ORCA 6.1.1, geometry optim
 | Molecule | E(HOMO) eV | E(LUMO) eV | Gap eV | IP eV | EA eV | η eV | S eV⁻¹ |
 |----------|-----------|-----------|--------|-------|-------|------|---------|
 | Quercetin | −5.5803 | −1.6115 | 3.9688 | 5.5803 | 1.6115 | 1.9844 | 0.2520 |
+| Rutin | −5.6247 | −1.5497 | 4.0750 | 5.6247 | 1.5497 | 2.0375 | 0.2454 |
 | Caffeic Acid | −5.7234 | −1.5307 | 4.1927 | 5.7234 | 1.5307 | 2.0964 | 0.2385 |
 | Ascorbic Acid | −6.1194 | −0.7450 | 5.3744 | 6.1194 | 0.7450 | 2.6872 | 0.1861 |
 | Catechin | −5.3061 | +0.3440 | 5.6501 | 5.3061 | −0.3440 | 2.8251 | 0.1770 |
@@ -47,9 +49,10 @@ Using the B3LYP/6-31G* level of theory implemented in ORCA 6.1.1, geometry optim
 | Rank | Molecule | Gap (eV) | Experimental IC₅₀ (μM) |
 |------|----------|----------|------------------------|
 | 1st | Quercetin | 3.9688 | 8.4 |
-| 2nd | Caffeic Acid | 4.1927 | 14.0 |
-| 3rd | Ascorbic Acid | 5.3744 | 31.3 |
-| 4th | Catechin | 5.6501 | 15.0 |
+| 2nd | Rutin | 4.0750 | ~12.6 |
+| 3rd | Caffeic Acid | 4.1927 | 14.0 |
+| 4th | Ascorbic Acid | 5.3744 | 31.3 |
+| 5th | Catechin | 5.6501 | 15.0 |
 
 Computational ranking is consistent with experimental DPPH data — smaller HOMO-LUMO gap correlates with stronger radical-scavenging activity.
 
@@ -76,6 +79,15 @@ Ahad_Khan_Computational_Chemistry/
 │
 ├── Ascorbic Acid/
 │ └── [same structure]
+|
+├── Rutin/
+│   ├── Rutin.inp              # ORCA input file
+│   ├── Rutin.out              # ORCA output file (1 day 8h 49min)
+│   ├── Rutin.eldens.cube      # Electron density grid
+│   ├── Rutin.esp.cube         # ESP grid
+│   ├── Rutin_ESP.png          # ESP map image
+│   ├── Rutin_HOMO.png         # HOMO orbital image
+│   └── Rutin_LUMO.png         # LUMO orbital image
 │
 └── Python_Analysis/
 ├── Project1_Analysis.py # Complete analysis script
@@ -83,7 +95,7 @@ Ahad_Khan_Computational_Chemistry/
 ├── Plot2_Chemical_Softness.png # Softness comparison
 ├── Plot3_Orbital_Energies.png # HOMO/LUMO energy levels
 └── Plot4_Gap_vs_IC50.png # Correlation plot
-
+└── Plot5_CDFT_Heatmap.png      # CDFT descriptor heatmap
 ---
 
 ## Methodology
@@ -125,13 +137,15 @@ All data analysis and visualisation was performed in Python using matplotlib, nu
 
 1. **Quercetin** is the strongest antioxidant among the studied molecules, consistent with its smallest HOMO-LUMO gap (3.97 eV) and highest chemical softness (0.252 eV⁻¹), reflecting its extensively delocalized π-electron system across two aromatic rings.
 
-2. **Caffeic acid** ranks second despite its small molecular size, due to extended conjugation through the vinyl chain connecting the catechol and carboxylate groups — a finding clearly supported by its delocalized HOMO orbital spanning the entire molecule.
+2. **Rutin** slots perfectly in second place (gap = 4.08 eV, softness = 0.2454 eV⁻¹), confirming that the disaccharide sugar group attached at position 3 of the quercetin core contributes no frontier orbital density — HOMO and LUMO are entirely localised on the flavonoid chromone system, explaining why rutin's antioxidant activity closely mirrors quercetin's despite its much larger molecular size (73 atoms, MW = 594.52 Da).
 
-3. **Ascorbic acid's** antioxidant mechanism differs fundamentally from the polyphenols — operating through enediol chemistry rather than π-electron donation — explaining its deviation from the HOMO-LUMO gap correlation.
+3. **Caffeic acid** ranks third despite its small molecular size, due to extended conjugation through the vinyl chain connecting the catechol and carboxylate groups — a finding clearly supported by its delocalized HOMO orbital spanning the entire molecule.
 
-4. **Catechin's** saturated C-ring prevents full conjugation across the molecule, resulting in the largest gap (5.65 eV) and most localised frontier orbitals among the series.
+4. **Ascorbic acid's** antioxidant mechanism differs fundamentally from the polyphenols — operating through enediol chemistry rather than π-electron donation — explaining its deviation from the HOMO-LUMO gap correlation.
 
-5. ESP maps visually confirm the numerical results — quercetin shows the most extensive electron-rich (red) surface coverage, directly visualising the sites available for radical scavenging.
+5. **Catechin's** saturated C-ring prevents full conjugation across the molecule, resulting in the largest gap (5.65 eV) and most localised frontier orbitals among the series.
+
+6. **ESP maps** visually confirm the numerical results — quercetin shows the most extensive electron-rich (red) surface coverage, directly visualising the sites available for radical scavenging.
 
 ---
 
@@ -149,7 +163,7 @@ All data analysis and visualisation was performed in Python using matplotlib, nu
 
 ## Notes
 
-- Rutin (C₂₇H₃₀O₁₆, 73 atoms) was included in the study but its geometry optimisation is computationally intensive and ongoing. Results will be added upon completion.
+- - Rutin (C₂₇H₃₀O₁₆, 73 atoms) required **1 day 8 hours 49 minutes** of computation time on a personal laptop (AMD Ryzen 7 4800HS, 8 cores, 16 GB RAM, WSL2/Ubuntu 24.04) — the most computationally demanding calculation in the series (662 basis functions, 219 frequency perturbations). All results are complete and included.
 - Quercetin exhibits a persistent low-frequency torsional imaginary mode (−185 cm⁻¹) associated with inter-ring OH rotation, consistent with its known conformational flexibility in literature. HOMO-LUMO analysis proceeds from the best available geometry.
 
 ---
