@@ -41,4 +41,13 @@ Hardness =  2.0964 eV
 Softness =  0.2385 eV-1
 No imaginary frequencies ✅
 
-RUTIN — pending
+RUTIN (C27H30O16, 73 atoms)
+E(HOMO)  = -5.6247 eV
+E(LUMO)  = -1.5497 eV
+Gap      =  4.0750 eV
+IP       =  5.6247 eV
+EA       =  1.5497 eV
+Hardness =  2.0375 eV
+Softness =  0.2454 eV-1
+No imaginary frequencies ✅
+Run time = 1 day 8 hours 49 minutes
