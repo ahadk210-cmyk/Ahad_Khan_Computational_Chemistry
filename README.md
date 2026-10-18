@@ -66,6 +66,7 @@ The computed gap ranking is consistent with experimental DPPH data for the four 
 ## Repository Structure
 
 ---
+```
 Ahad_Khan_Computational_Chemistry/
 │
 ├── Quercetin/
@@ -102,6 +103,7 @@ Ahad_Khan_Computational_Chemistry/
     ├── Plot3_Orbital_Energies.png  # HOMO/LUMO energy levels
     ├── Plot4_Gap_vs_IC50.png       # Correlation plot (R²=0.422)
     └── Plot5_CDFT_Heatmap.png      # CDFT descriptor heatmap
+```
 ---
 
 ## Methodology
