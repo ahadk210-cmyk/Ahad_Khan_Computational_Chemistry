@@ -65,7 +65,7 @@ The computed gap ranking is consistent with experimental DPPH data for the four 
 
 ## Repository Structure
 
-```
+---
 Ahad_Khan_Computational_Chemistry/
 │
 ├── Quercetin/
